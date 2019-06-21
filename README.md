@@ -1,6 +1,6 @@
 # react-olark-plugin
 
-React component to render an Olark chatbox on your page. This is based on the work completed by [jgnewman](https://github.com/jgnewman/react-olark). This component adds additional functionality that allows configuration for box configuration by Olark e.g. ```olark.configure('box.inline', true);```.
+React component to render an Olark chatbox on your page. This is based on the work completed by [jgnewman](https://github.com/jgnewman/react-olark). This component adds additional functionality that allows configuration for if the box is inline or not. This is set in the env.js file.
 
 ## How it works
 
@@ -23,7 +23,7 @@ ReactDOM.render(
 
 ## Options
 
-Olark allows you to to [configure your chatbox](https://www.olark.com/api) in lots of cool ways. These mainly come in the form of "system" configurations, "locale" configurations and "box" configurations. System values change how the chatbox does things, locale values allow you to customize text strings for use with different languages and box values allow you to customise the box whether it is inline or not and if it starts hidden or not etc.
+Olark allows you to to [configure your chatbox](https://www.olark.com/api) in lots of cool ways. These mainly come in the form of "system" configurations and "locale" configurations. System values change how the chatbox does things and locale values allow you to customize text strings for use with different languages.
 
 You can pass these configuration options to the `Olark` component as props:
 
@@ -32,7 +32,6 @@ You can pass these configuration options to the `Olark` component as props:
   siteId={YOUR_SITE_ID}
   systemConfig={{ hb_dark_theme: true, ... }}
   localeConfig={{ chatting_title: 'Chat ki a tatou!', ... }}
-  boxConfig={{ box.inline: true }}
 />
 ```
 
