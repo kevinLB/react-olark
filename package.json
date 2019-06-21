@@ -1,6 +1,6 @@
 {
   "name": "react-olark-plugin",
-  "version": "0.0.1",
+  "version": "1.0",
   "description": "React component to render an Olark chatbox on your page",
   "main": "./lib/index.js",
   "repository": {
