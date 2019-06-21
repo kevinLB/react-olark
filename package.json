@@ -1,0 +1,39 @@
+{
+  "name": "react-olark-plugin",
+  "version": "0.0.1",
+  "description": "React component to render an Olark chatbox on your page",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kieranwt94/react-olark-plugin"
+  },
+  "author": "Kieran White <kwhite@myself.com>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "olark",
+    "component",
+    "chat",
+    "plugin"
+  ],
+  "peerDependencies": {
+    "react": "^15.5.4"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "webpack": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1"
+  }
+}
