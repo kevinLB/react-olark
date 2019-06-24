@@ -12,7 +12,7 @@ app.use('/app.js', express.static(
 ));
 
 app.get(['/', '/*'], (req, res) => {
-  console.log(req.url)
+  console.log(req.url);
   res.sendFile(path.resolve(__dirname, '../', 'client/index.html'));
 });
 
