@@ -21,6 +21,15 @@ class Olark extends Component {
   }
 
   /**
+* Determine whether `document` exists.
+  *
+  * @return {Boolean}
+  */
+  documentExists() {
+      return typeof document !== 'undefined';
+  }
+
+  /**
    * Determine whether the olark snippet exists.
    *
    * @return {Boolean}
@@ -74,7 +83,7 @@ class Olark extends Component {
     /*
      * Generate the olark script and append it to the body.
      */
-    if (this.windowExists() && !this.snippetExists()) {
+    if (this.windowExists() && !this.snippetExists() && this.documentExists()) {
       const siteId = this.props.siteId;
       const script = document.createElement('script');
       script.setAttribute('id', 'olark-react-snippet');

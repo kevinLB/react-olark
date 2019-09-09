@@ -46,6 +46,18 @@ var Olark = function (_Component) {
     }
 
     /**
+    * Determine whether `document` exists.
+    *
+    * @return {Boolean}
+    */
+
+  }, {
+    key: 'documentExists',
+    value: function documentExists() {
+      return typeof document !== 'undefined';
+    }
+
+    /**
      * Determine whether the olark snippet exists.
      *
      * @return {Boolean}
@@ -114,7 +126,7 @@ var Olark = function (_Component) {
       /*
        * Generate the olark script and append it to the body.
        */
-      if (this.windowExists() && !this.snippetExists()) {
+      if (this.windowExists() && !this.snippetExists() && this.documentExists()) {
         var siteId = this.props.siteId;
         var script = document.createElement('script');
         script.setAttribute('id', 'olark-react-snippet');
