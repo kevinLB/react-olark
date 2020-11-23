@@ -1,6 +1,7 @@
-# react-olark-plugin
+# react-olark
 
-React component to render an Olark chatbox on your page. This is based on the work completed by [jgnewman](https://github.com/jgnewman/react-olark). This component adds additional functionality that allows configuration for if the box is inline or not. This is set in the env.js file.
+React component to render an Olark chatbox on your page. \
+This is based on the work completed by [jgnewman](https://github.com/jgnewman/react-olark).
 
 ## How it works
 
@@ -9,14 +10,15 @@ React component to render an Olark chatbox on your page. This is based on the wo
 3. That's it!
 
 ```jsx
-import Olark from 'react-olark-plugin';
+import Olark from "react-olark-plugin";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 ReactDOM.render(
-  <Olark siteId={YOUR_SITE_ID} />
-, document.getElementById('root'));
+  <Olark siteId={YOUR_SITE_ID} />,
+  document.getElementById("root")
+);
 ```
 
 **Note that you _should not_ use the Olark JavaScript snippet on your page if you are using react-olark because it will be automatically generated for you.**

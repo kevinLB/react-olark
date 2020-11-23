@@ -1,45 +1,49 @@
 {
-  "name": "react-olark-plugin",
-  "version": "0.0.11",
-  "description": "React component to render an Olark chatbox on your page",
-  "main": "bin/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kieranwt94/react-olark-plugin"
-  },
-  "author": "Kieran White <kwhite@myself.com>",
+  "name": "react-olark",
+  "version": "1.0.0-alpha.1",
+  "description": "React component to render an Olark chatbox",
   "license": "MIT",
+  "author": "Ivansky",
+  "homepage": "https://github.com/ivansky/react-olark-plugin",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "browser": "build/olark.js",
+  "files": [
+    "/build",
+    "/window-extend.d.ts"
+  ],
   "keywords": [
     "react",
     "olark",
     "component",
-    "chat",
-    "plugin"
+    "typescript"
   ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "prepublishOnly": "npm run build",
+    "precommit": "pretty-quick --staged && test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivansky/react-olark-plugin"
+  },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.24.0",
-    "babel-loader": "^6.4.1",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "babelify": "^7.3.0",
-    "browserify": "^14.1.0",
-    "express": "^4.15.2",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-clean": "^0.3.2",
-    "gulp-util": "^3.0.8",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@types/react": "^17.0.0",
+    "jest": "^26.6.3",
+    "prettier": "2.2.0",
+    "pretty-quick": "^3.1.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "rollup": "^2.33.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "tslib": "^2.0.3",
+    "typescript": "^4.1.2"
   },
   "peerDependencies": {
-    "react": "^15.5.4"
-  },
-  "dependencies": {
-    "react-olark-plugin": "0.0.1"
+    "react": "^16.8.0 || ^17.0.0"
   }
 }
