@@ -1,6 +1,8 @@
+type ChatBoxSize = 'sm' | 'md' | 'lg' | 'dr';
+
 export interface IOlarkSystemConfig {
   localization?: string;
-  hb_chatbox_size?: 'sm' | 'md' | 'lg' | 'dr';
+  hb_chatbox_size?: ChatBoxSize;
   hb_custom_style?: {
     general: {
       fonts?: string[];
@@ -206,6 +208,17 @@ export interface OlarkCommand {
   body?: string;
 }
 
+export type OlarkConfigureFunction = {
+  (name: 'CalloutBubble.slide', enable: boolean): void;
+  (name: 'CalloutBubble.bubble_height', height: number): void;
+  (name: 'CalloutBubble.bubble_width', width: number): void;
+  (name: 'features.attention_grabber', enable: boolean): void;
+  (name: 'CalloutBubble.bubble_image_url_offline', url: string): void;
+  (name: 'CalloutBubble.bubble_image_url', url: string): void;
+  (name: 'system.hb_position', position: 'left' | 'right'): void;
+  (name: 'system.hb_chatbox_size', size: ChatBoxSize): void;
+};
+
 export type OlarkFunction = {
   // Chat box behavior
   (event: 'api.box.setLocale'): void;
@@ -272,6 +285,7 @@ export type OlarkFunction = {
   _: {
     reset(): void;
   };
+  configure: OlarkConfigureFunction;
 };
 
 export type OlarkReactFunction = {
@@ -282,3 +296,7 @@ export type OlarkReactFunction = {
   ): void;
   olarkWasLaunched?: boolean;
 };
+
+interface Window {
+  olark: OlarkFunction;
+}
