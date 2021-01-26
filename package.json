@@ -4,7 +4,7 @@
   "description": "React component to render an Olark chatbox",
   "license": "MIT",
   "author": "Ivansky",
-  "homepage": "https://github.com/ivansky/react-olark-plugin",
+  "homepage": "https://github.com/ivansky/react-olark",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "browser": "build/olark.js",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ivansky/react-olark-plugin"
+    "url": "https://github.com/ivansky/react-olark"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
