@@ -1,6 +1,6 @@
 {
   "name": "react-olark",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "React component to render an Olark chatbox",
   "license": "MIT",
   "author": "Ivansky",
