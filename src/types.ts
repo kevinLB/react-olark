@@ -202,6 +202,9 @@ export interface OlarkChatRule {
 
 export interface OlarkMessage {
   body: string;
+  automated?: boolean;
+  targeted?: boolean;
+  nickname?: string;
 }
 
 export interface OlarkCommand {
