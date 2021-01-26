@@ -275,10 +275,7 @@ export type OlarkFunction = {
     event: 'api.visitor.getDetails',
     callback: (visitor: OlarkVisitorDetails) => void
   ): void;
-  (
-    event: 'api.visitor.updateCustomFields',
-    dictionary: { [fieldName: string]: string }
-  ): void;
+  (event: 'api.visitor.updateCustomFields', dictionary: object): void;
   (
     event: 'api.visitor.updateEmailAddress',
     options: { emailAddress: string }
