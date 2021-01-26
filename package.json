@@ -9,8 +9,7 @@
   "module": "build/index.es.js",
   "browser": "build/olark.js",
   "files": [
-    "/build",
-    "/window-extend.d.ts"
+    "/build"
   ],
   "keywords": [
     "react",

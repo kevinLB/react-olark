@@ -2,6 +2,7 @@ type ChatBoxSize = 'sm' | 'md' | 'lg' | 'dr';
 
 export interface IOlarkSystemConfig {
   localization?: string;
+  group?: string;
   hb_chatbox_size?: ChatBoxSize;
   hb_custom_style?: {
     general: {
@@ -209,14 +210,24 @@ export interface OlarkCommand {
 }
 
 export type OlarkConfigureFunction = {
+  // system config
+  (name: 'system.group', group: string): void;
+  (name: 'system.hb_position', position: 'left' | 'right'): void;
+  (name: 'system.hb_chatbox_size', size: ChatBoxSize): void;
+  (name: 'system.localization', localization: string): void;
+
+  // CalloutBubble config
   (name: 'CalloutBubble.slide', enable: boolean): void;
   (name: 'CalloutBubble.bubble_height', height: number): void;
   (name: 'CalloutBubble.bubble_width', width: number): void;
-  (name: 'features.attention_grabber', enable: boolean): void;
   (name: 'CalloutBubble.bubble_image_url_offline', url: string): void;
   (name: 'CalloutBubble.bubble_image_url', url: string): void;
-  (name: 'system.hb_position', position: 'left' | 'right'): void;
-  (name: 'system.hb_chatbox_size', size: ChatBoxSize): void;
+
+  // features config
+  (name: 'features.attention_grabber', enable: boolean): void;
+
+  // box config
+  (name: 'box.inline', enable: boolean): void;
 };
 
 export type OlarkFunction = {
@@ -286,6 +297,7 @@ export type OlarkFunction = {
     reset(): void;
   };
   configure: OlarkConfigureFunction;
+  identify(id: string): void;
 };
 
 export type OlarkReactFunction = {
@@ -297,6 +309,9 @@ export type OlarkReactFunction = {
   olarkWasLaunched?: boolean;
 };
 
-interface Window {
-  olark: OlarkFunction;
+declare global {
+  interface Window {
+    olark: OlarkFunction;
+    olarkReact: OlarkReactFunction;
+  }
 }
