@@ -1,5 +1,5 @@
 import typescript from 'rollup-plugin-typescript2';
-import { terser } from 'rollup-plugin-terser';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
@@ -27,11 +27,11 @@ export default {
   ],
   external: [...Object.keys(pkg.dependencies || {})],
   plugins: [
+    peerDepsExternal(),
     resolve(),
     commonjs(),
     typescript({
       typescript: require('typescript'),
     }),
-    terser(), // minifies generated bundles
   ],
 };
