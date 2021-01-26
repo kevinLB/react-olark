@@ -233,7 +233,7 @@ export type OlarkFunction = {
   ): void;
   (
     event: 'api.chat.onCommandFromOperator',
-    event: { command: OlarkCommand }
+    callback: (event: { command: OlarkCommand }) => void
   ): void;
   (event: 'api.chat.onOperatorsAvailable', callback: () => void): void;
   (event: 'api.chat.onOperatorsAway', callback: () => void): void;
