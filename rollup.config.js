@@ -20,15 +20,12 @@ export default {
     },
     {
       file: pkg.browser,
-      format: 'iife',
+      format: 'amd',
       name: 'Olark', // the global which can be used in a browser
       sourcemap: true,
     },
   ],
-  external: [
-    ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {}),
-  ],
+  external: [/node_modules/],
   plugins: [
     peerDepsExternal(),
     resolve(),
