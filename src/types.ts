@@ -18,6 +18,7 @@ export interface IOlarkSystemConfig {
   hb_primary_color?: string;
   hb_show_as_tab?: boolean;
   hb_show_button_text?: boolean; // true
+  is_single_page_application?: boolean;
 }
 
 export interface IOlarkBoxConfig {
